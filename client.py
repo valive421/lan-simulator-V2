@@ -34,6 +34,7 @@ import struct
 import ipaddress
 import netifaces
 from datetime import datetime, timedelta
+import traceback
 
 # Try to load WinTun DLL
 try:
@@ -49,6 +50,28 @@ except:
     wintun = None
     print("Warning: WinTun DLL not found. VPN functionality will be limited.")
 
+# Debug logging
+DEBUG_LOG_PATH = os.path.join(os.path.dirname(__file__), 'client_debug.log')
+_log_lock = threading.Lock()
+
+def debug(event, level='INFO', exc=None, extra=None):
+    ts = datetime.now().isoformat()
+    msg = f"{ts} [{level}] {event}"
+    if extra is not None:
+        msg += " | " + str(extra)
+    print(msg)
+    try:
+        with _log_lock:
+            with open(DEBUG_LOG_PATH, 'a', encoding='utf-8') as f:
+                f.write(msg + '\n')
+                if exc is not None:
+                    if isinstance(exc, BaseException):
+                        f.write(''.join(traceback.format_exception(type(exc), exc, exc.__traceback__)))
+                    else:
+                        f.write(str(exc) + '\n')
+    except Exception as e:
+        print("Failed to write debug log:", e)
+
 class WinTunManager:
     def __init__(self):
         self.adapter = None
@@ -56,7 +79,9 @@ class WinTunManager:
         self.read_wait_event = None
         
     def create_adapter(self, name="LANVPN", tunnel_type="LAN VPN Tunnel"):
+        debug(f"create_adapter: attempting to create/open adapter '{name}'")
         if not wintun:
+            debug("create_adapter: wintun DLL not loaded", level='ERROR')
             return False
             
         try:
@@ -68,33 +93,41 @@ class WinTunManager:
             
             self.adapter = wintun.WintunOpenAdapter(name)
             if self.adapter:
-                print(f"Using existing WinTun adapter: {name}")
+                debug(f"Using existing WinTun adapter: {name}")
                 return True
                 
             self.adapter = wintun.WintunCreateAdapter(name, tunnel_type, None)
-            return self.adapter is not None
+            ok = self.adapter is not None
+            debug(f"create_adapter: created adapter={ok}")
+            return ok
             
         except Exception as e:
-            print(f"Error creating WinTun adapter: {e}")
+            debug("Error creating WinTun adapter", level='ERROR', exc=e)
             return False
             
     def start_session(self, capacity=0x400000):
+        debug("start_session: starting session")
         if not self.adapter:
+            debug("start_session: no adapter available", level='ERROR')
             return False
             
         try:
             wintun.WintunStartSession.restype = c_void_p
             wintun.WintunStartSession.argtypes = [c_void_p, c_uint]
-            
+            debug(f"WintunStartSession func: {getattr(wintun, 'WintunStartSession', None)}")
             self.session = wintun.WintunStartSession(self.adapter, capacity)
             if self.session:
                 wintun.WintunGetReadWaitEvent.restype = c_void_p
                 wintun.WintunGetReadWaitEvent.argtypes = [c_void_p]
                 self.read_wait_event = wintun.WintunGetReadWaitEvent(self.session)
+            debug(f"start_session: session started={self.session is not None}")
             return self.session is not None
-            
         except Exception as e:
-            print(f"Error starting WinTun session: {e}")
+            try:
+                err = ctypes.windll.kernel32.GetLastError()
+            except Exception:
+                err = None
+            debug("Error starting WinTun session", level='ERROR', exc=e, extra={'Win32LastError': err})
             return False
             
     def stop_session(self):
@@ -103,9 +136,10 @@ class WinTunManager:
                 wintun.WintunEndSession.restype = None
                 wintun.WintunEndSession.argtypes = [c_void_p]
                 wintun.WintunEndSession(self.session)
-            except:
-                pass
+            except Exception as e:
+                debug("Error ending WinTun session", level='WARNING', exc=e)
             self.session = None
+            debug("stop_session: session stopped")
             
     def receive_packet(self):
         if not self.session:
@@ -125,8 +159,8 @@ class WinTunManager:
                 wintun.WintunReleaseReceivePacket(self.session, packet)
                 
                 return packet_data
-        except:
-            pass
+        except Exception as e:
+            debug("receive_packet: exception", level='ERROR', exc=e)
         return None
         
     def send_packet(self, packet_data):
@@ -145,8 +179,8 @@ class WinTunManager:
                 memmove(packet_ptr, packet_data, len(packet_data))
                 wintun.WintunSendPacket(self.session, packet_ptr)
                 return True
-        except:
-            pass
+        except Exception as e:
+            debug("send_packet: exception", level='ERROR', exc=e)
         return False
 
 class VPNClient:
@@ -167,17 +201,24 @@ class VPNClient:
         
     def start(self):
         try:
+            debug("VPNClient.start: creating UDP socket")
             self.udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             self.udp_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             self.udp_socket.bind(('0.0.0.0', 0))
+            debug(f"VPNClient.start: UDP socket bound to {self.udp_socket.getsockname()}")
             
-            if not self.wintun.create_adapter():
-                print("Warning: Could not create WinTun adapter")
+            # Use unique adapter name per client to avoid conflicts when multiple clients run on same host
+            adapter_name = f"LANVPN-{self.peer_id}"
+            debug(f"Attempting to create/open adapter with name: {adapter_name}")
+            if not self.wintun.create_adapter(name=adapter_name):
+                debug("Could not create WinTun adapter", level='WARNING')
             else:
                 if not self.wintun.start_session():
-                    print("Warning: Could not start WinTun session")
+                    debug("Could not start WinTun session", level='WARNING')
+            
             
             self.running = True
+            debug(f"VPNClient.start: running={self.running}, peer_id={self.peer_id}")
             
             threads = [
                 threading.Thread(target=self._network_loop),
@@ -187,25 +228,32 @@ class VPNClient:
             for thread in threads:
                 thread.daemon = True
                 thread.start()
+                debug(f"VPNClient.start: started thread {thread.name}")
                 
-            print(f"VPN client started for peer {self.peer_id}")
+            debug(f"VPN client started for peer {self.peer_id}")
             return True
             
         except Exception as e:
-            print(f"Error starting VPN client: {e}")
+            debug("Error starting VPN client", level='ERROR', exc=e)
             return False
             
     def stop(self):
         self.running = False
+        debug("VPNClient.stop: stopping client")
         if self.udp_socket:
-            self.udp_socket.close()
+            try:
+                self.udp_socket.close()
+                debug("VPNClient.stop: UDP socket closed")
+            except Exception as e:
+                debug("VPNClient.stop: error closing socket", level='WARNING', exc=e)
         self.wintun.stop_session()
         
     def create_room(self, room_id, username):
+        debug(f"create_room: room_id={room_id}, username={username}")
         self.room_id = room_id
         self.username = username
         self.room_members = {self.peer_id: {'username': username, 'addr': None}}
-        
+
         message = {
             'action': 'create_room',
             'room_id': room_id,
@@ -216,9 +264,10 @@ class VPNClient:
         self._send_to_server(message)
         
     def join_room(self, room_id, username):
+        debug(f"join_room: room_id={room_id}, username={username}")
         self.room_id = room_id
         self.username = username
-        
+
         message = {
             'action': 'join_room',
             'room_id': room_id,
@@ -229,6 +278,7 @@ class VPNClient:
         self._send_to_server(message)
         
     def leave_room(self):
+        debug(f"leave_room: leaving room {self.room_id}")
         if self.room_id:
             message = {
                 'action': 'leave_room',
@@ -243,22 +293,36 @@ class VPNClient:
     def _network_loop(self):
         while self.running:
             try:
+                if not self.udp_socket:
+                    debug("_network_loop: udp_socket is None", level='ERROR')
+                    time.sleep(1)
+                    continue
+
                 readable, _, _ = select.select([self.udp_socket], [], [], 0.1)
                 if self.udp_socket in readable:
-                    data, addr = self.udp_socket.recvfrom(65536)
-                    self._handle_network_data(data, addr)
+                    try:
+                        data, addr = self.udp_socket.recvfrom(65536)
+                        debug(f"_network_loop: received {len(data)} bytes from {addr}")
+                        self._handle_network_data(data, addr)
+                    except Exception as e:
+                        debug("_network_loop: recvfrom failed", level='ERROR', exc=e)
                 
                 if self.wintun.session:
                     packet = self.wintun.receive_packet()
                     if packet:
                         if self.packet_callback:
                             self.packet_callback("TUN->NET", packet, None)
-                        for peer_addr in self.connected_peers.values():
+                        for peer_id, peer_addr in self.connected_peers.items():
                             if peer_addr:
-                                self.udp_socket.sendto(packet, peer_addr)
+                                try:
+                                    self.udp_socket.sendto(packet, peer_addr)
+                                    debug(f"_network_loop: sent packet to peer {peer_id} at {peer_addr}")
+                                except Exception as e:
+                                    debug(f"_network_loop: sendto to {peer_addr} failed", level='ERROR', exc=e)
                 
             except Exception as e:
-                print(f"Error in network loop: {e}")
+                debug(f"Error in network loop: {e}", level='ERROR', exc=e)
+                debug("_network_loop: outer exception", level='ERROR', exc=e)
                 time.sleep(1)
                 
     def _keepalive_loop(self):
@@ -290,39 +354,57 @@ class VPNClient:
             
     def _handle_control_message(self, message, addr):
         action = message.get('action')
-        
+
         if action == 'room_created':
-            print("Room created successfully")
-            
+            debug("Room created successfully", level='INFO')
+
         elif action == 'room_joined':
-            print("Joined room successfully")
-            self.room_members = message.get('members', {})
+            debug("Joined room successfully", level='INFO')
+            raw_members = message.get('members', {})
+            members = {}
+            for pid, info in raw_members.items():
+                members[pid] = {
+                    'username': info.get('username'),
+                    'addr': (info.get('public_ip'), info.get('public_port'))
+                }
+            self.room_members = members
             self._connect_to_peers()
-            
+
         elif action == 'peer_list':
-            self.room_members = message.get('members', {})
+            debug("Received peer_list", extra=message)
+            raw_members = message.get('members', {})
+            members = {}
+            for pid, info in raw_members.items():
+                members[pid] = {
+                    'username': info.get('username'),
+                    'addr': (info.get('public_ip'), info.get('public_port'))
+                }
+            self.room_members = members
             self._connect_to_peers()
-            
+
         elif action == 'peer_joined':
             peer_id = message.get('peer_id')
             username = message.get('username')
             peer_addr = (message.get('public_ip'), message.get('public_port'))
-            
+
             self.room_members[peer_id] = {
                 'username': username,
                 'addr': peer_addr
             }
+            debug(f"peer_joined: {peer_id} at {peer_addr}")
             self._initiate_punch(peer_id, peer_addr)
-            
+
         elif action == 'peer_left':
             peer_id = message.get('peer_id')
+            debug(f"peer_left: {peer_id}")
             if peer_id in self.room_members:
                 del self.room_members[peer_id]
             if peer_id in self.connected_peers:
                 del self.connected_peers[peer_id]
-                
+
         elif action == 'punch_request':
             source_peer = message.get('source_peer')
+            debug(f"punch_request from {source_peer}")
             if source_peer in self.room_members:
                 response = {
                     'action': 'punch_response',
@@ -330,12 +412,16 @@ class VPNClient:
                     'peer_id': self.peer_id
                 }
                 self._send_message(response, self.room_members[source_peer]['addr'])
-                
+
         elif action == 'punch_response':
             source_peer = message.get('peer_id')
+            debug(f"punch_response from {source_peer}")
             if source_peer in self.room_members:
                 self.connected_peers[source_peer] = self.room_members[source_peer]['addr']
-                print(f"Connected to peer: {source_peer}")
+                debug(f"Connected to peer: {source_peer}")
+
+        else:
+            debug("Unknown control message", level='WARNING', extra=message)
                 
     def _connect_to_peers(self):
         for peer_id, info in self.room_members.items():
@@ -345,13 +431,13 @@ class VPNClient:
     def _initiate_punch(self, peer_id, peer_addr):
         if peer_id in self.connected_peers:
             return
-            
-        print(f"Connecting to {peer_id} at {peer_addr}")
-        
+        debug(f"_initiate_punch: Connecting to {peer_id} at {peer_addr}")
+
         message = {
             'action': 'punch_request',
             'room_id': self.room_id,
-            'peer_id': self.peer_id
+            'source_peer': self.peer_id,
+            'target_peer': peer_id
         }
         self._send_message(message, peer_addr)
         
@@ -360,14 +446,14 @@ class VPNClient:
             data = json.dumps(message).encode()
             self.udp_socket.sendto(data, (self.server_host, self.server_port))
         except Exception as e:
-            print(f"Error sending to server: {e}")
+            debug(f"Error sending to server: {e}", level='ERROR', exc=e)
             
     def _send_message(self, message, addr):
         try:
             data = json.dumps(message).encode()
             self.udp_socket.sendto(data, addr)
         except Exception as e:
-            print(f"Error sending message: {e}")
+            debug(f"Error sending message: {e}", level='ERROR', exc=e)
 
 class VPNGuiClient:
     def __init__(self, root, server_host, server_port):

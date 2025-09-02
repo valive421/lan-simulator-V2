@@ -1,0 +1,564 @@
+2025-09-02T13:20:21.207134 [INFO] VPNClient.start: creating UDP socket
+2025-09-02T13:20:21.209093 [INFO] VPNClient.start: UDP socket bound to ('0.0.0.0', 63367)
+2025-09-02T13:20:21.209568 [INFO] create_adapter: attempting to create/open adapter 'LANVPN'
+2025-09-02T13:20:21.542858 [INFO] create_adapter: created adapter=True
+2025-09-02T13:20:21.543542 [INFO] start_session: starting session
+2025-09-02T13:20:21.544113 [INFO] WintunStartSession func: <_FuncPtr object at 0x0000012FD36A25B0>
+2025-09-02T13:20:21.546109 [INFO] start_session: session started=True
+2025-09-02T13:20:21.549272 [INFO] VPNClient.start: running=True, peer_id=3f07129a
+2025-09-02T13:20:21.565110 [INFO] VPNClient.start: started thread Thread-1 (_network_loop)
+2025-09-02T13:20:21.574323 [INFO] VPNClient.start: started thread Thread-2 (_keepalive_loop)
+2025-09-02T13:20:21.575364 [INFO] VPN client started for peer 3f07129a
+2025-09-02T13:20:48.431138 [INFO] join_room: room_id=a, username=Player_3f07129a
+2025-09-02T13:20:48.432804 [INFO] _network_loop: received 77 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:20:48.433507 [INFO] Joined room successfully
+2025-09-02T13:21:05.408865 [INFO] VPNClient.start: creating UDP socket
+2025-09-02T13:21:05.411962 [INFO] VPNClient.start: UDP socket bound to ('0.0.0.0', 54961)
+2025-09-02T13:21:05.412777 [INFO] create_adapter: attempting to create/open adapter 'LANVPN'
+2025-09-02T13:21:05.417760 [INFO] Using existing WinTun adapter: LANVPN
+2025-09-02T13:21:05.418425 [INFO] start_session: starting session
+2025-09-02T13:21:05.419027 [INFO] WintunStartSession func: <_FuncPtr object at 0x0000013DE06625B0>
+2025-09-02T13:21:05.419651 [INFO] start_session: session started=False
+2025-09-02T13:21:05.420159 [WARNING] Could not start WinTun session
+2025-09-02T13:21:05.420831 [INFO] VPNClient.start: running=True, peer_id=29bde152
+2025-09-02T13:21:05.424375 [INFO] VPNClient.start: started thread Thread-1 (_network_loop)
+2025-09-02T13:21:05.425232 [INFO] VPNClient.start: started thread Thread-2 (_keepalive_loop)
+2025-09-02T13:21:05.425748 [INFO] VPN client started for peer 29bde152
+2025-09-02T13:21:11.672002 [INFO] join_room: room_id=a, username=Player_29bde152
+2025-09-02T13:21:11.673331 [INFO] _network_loop: received 143 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:21:11.673372 [INFO] _network_loop: received 168 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:21:11.674060 [INFO] peer_joined: 29bde152 at ('127.0.0.1', 54961)
+2025-09-02T13:21:11.674371 [INFO] Joined room successfully
+2025-09-02T13:21:11.674701 [INFO] _initiate_punch: Connecting to 29bde152 at ('127.0.0.1', 54961)
+2025-09-02T13:21:11.675532 [INFO] _network_loop: received 97 bytes from ('127.0.0.1', 63367)
+2025-09-02T13:21:11.675960 [INFO] punch_request from 3f07129a
+2025-09-02T13:23:35.157078 [INFO] VPNClient.start: creating UDP socket
+2025-09-02T13:23:35.159619 [INFO] VPNClient.start: UDP socket bound to ('0.0.0.0', 64159)
+2025-09-02T13:23:35.160175 [INFO] Attempting to create/open adapter with name: LANVPN-5425b806
+2025-09-02T13:23:35.160654 [INFO] create_adapter: attempting to create/open adapter 'LANVPN-5425b806'
+2025-09-02T13:23:35.477672 [INFO] create_adapter: created adapter=True
+2025-09-02T13:23:35.478522 [INFO] start_session: starting session
+2025-09-02T13:23:35.479079 [INFO] WintunStartSession func: <_FuncPtr object at 0x0000022EFB3725B0>
+2025-09-02T13:23:35.480282 [INFO] start_session: session started=True
+2025-09-02T13:23:35.483270 [INFO] VPNClient.start: running=True, peer_id=5425b806
+2025-09-02T13:23:35.489151 [INFO] VPNClient.start: started thread Thread-1 (_network_loop)
+2025-09-02T13:23:35.490342 [INFO] VPNClient.start: started thread Thread-2 (_keepalive_loop)
+2025-09-02T13:23:35.491272 [INFO] VPN client started for peer 5425b806
+2025-09-02T13:23:41.043853 [INFO] create_room: room_id=a, username=Player_5425b806
+2025-09-02T13:23:41.045502 [INFO] _network_loop: received 63 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:23:41.046052 [INFO] Room created successfully
+2025-09-02T13:23:49.047376 [INFO] VPNClient.start: creating UDP socket
+2025-09-02T13:23:49.049404 [INFO] VPNClient.start: UDP socket bound to ('0.0.0.0', 54538)
+2025-09-02T13:23:49.049913 [INFO] Attempting to create/open adapter with name: LANVPN-6a9746c4
+2025-09-02T13:23:49.050346 [INFO] create_adapter: attempting to create/open adapter 'LANVPN-6a9746c4'
+2025-09-02T13:23:49.342288 [INFO] create_adapter: created adapter=True
+2025-09-02T13:23:49.342977 [INFO] start_session: starting session
+2025-09-02T13:23:49.343518 [INFO] WintunStartSession func: <_FuncPtr object at 0x000001EC58BD25B0>
+2025-09-02T13:23:49.344827 [INFO] start_session: session started=True
+2025-09-02T13:23:49.347528 [INFO] VPNClient.start: running=True, peer_id=6a9746c4
+2025-09-02T13:23:49.364331 [INFO] VPNClient.start: started thread Thread-1 (_network_loop)
+2025-09-02T13:23:49.374053 [INFO] VPNClient.start: started thread Thread-2 (_keepalive_loop)
+2025-09-02T13:23:49.375384 [INFO] VPN client started for peer 6a9746c4
+2025-09-02T13:23:52.625058 [INFO] join_room: room_id=a, username=Player_6a9746c4
+2025-09-02T13:23:52.626385 [INFO] _network_loop: received 354 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:23:52.626612 [INFO] _network_loop: received 143 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:23:52.626985 [INFO] Joined room successfully
+2025-09-02T13:23:52.627522 [INFO] peer_joined: 6a9746c4 at ('127.0.0.1', 54538)
+2025-09-02T13:23:52.628384 [INFO] _initiate_punch: Connecting to 6a9746c4 at ('127.0.0.1', 54538)
+2025-09-02T13:23:52.629234 [INFO] _network_loop: received 97 bytes from ('127.0.0.1', 64159)
+2025-09-02T13:23:52.629900 [INFO] punch_request from 5425b806
+2025-09-02T13:25:09.131982 [INFO] VPNClient.start: creating UDP socket
+2025-09-02T13:25:09.133786 [INFO] VPNClient.start: UDP socket bound to ('0.0.0.0', 61791)
+2025-09-02T13:25:09.134248 [INFO] Attempting to create/open adapter with name: LANVPN-e68d4e00
+2025-09-02T13:25:09.134676 [INFO] create_adapter: attempting to create/open adapter 'LANVPN-e68d4e00'
+2025-09-02T13:25:09.451899 [INFO] create_adapter: created adapter=True
+2025-09-02T13:25:09.452779 [INFO] start_session: starting session
+2025-09-02T13:25:09.453231 [INFO] WintunStartSession func: <_FuncPtr object at 0x00000247785B25B0>
+2025-09-02T13:25:09.454536 [INFO] start_session: session started=True
+2025-09-02T13:25:09.457688 [INFO] VPNClient.start: running=True, peer_id=e68d4e00
+2025-09-02T13:25:09.463041 [INFO] VPNClient.start: started thread Thread-1 (_network_loop)
+2025-09-02T13:25:09.465454 [INFO] VPNClient.start: started thread Thread-2 (_keepalive_loop)
+2025-09-02T13:25:09.466265 [INFO] VPN client started for peer e68d4e00
+2025-09-02T13:25:12.351486 [INFO] create_room: room_id=a, username=Player_e68d4e00
+2025-09-02T13:25:12.352720 [INFO] _network_loop: received 63 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:25:12.353450 [INFO] Room created successfully
+2025-09-02T13:25:20.838653 [INFO] VPNClient.start: creating UDP socket
+2025-09-02T13:25:20.841996 [INFO] VPNClient.start: UDP socket bound to ('0.0.0.0', 55184)
+2025-09-02T13:25:20.842775 [INFO] Attempting to create/open adapter with name: LANVPN-53e59902
+2025-09-02T13:25:20.843254 [INFO] create_adapter: attempting to create/open adapter 'LANVPN-53e59902'
+2025-09-02T13:25:22.461947 [INFO] create_adapter: created adapter=True
+2025-09-02T13:25:22.462721 [INFO] start_session: starting session
+2025-09-02T13:25:22.463273 [INFO] WintunStartSession func: <_FuncPtr object at 0x000001F8137F25B0>
+2025-09-02T13:25:22.465074 [INFO] start_session: session started=True
+2025-09-02T13:25:22.476492 [INFO] VPNClient.start: running=True, peer_id=53e59902
+2025-09-02T13:25:22.512514 [INFO] VPNClient.start: started thread Thread-1 (_network_loop)
+2025-09-02T13:25:22.515174 [INFO] VPNClient.start: started thread Thread-2 (_keepalive_loop)
+2025-09-02T13:25:22.515744 [INFO] VPN client started for peer 53e59902
+2025-09-02T13:25:25.782659 [INFO] join_room: room_id=a, username=Player_53e59902
+2025-09-02T13:25:25.784127 [INFO] _network_loop: received 354 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:25:25.784199 [INFO] _network_loop: received 143 bytes from ('127.0.0.1', 5000)
+2025-09-02T13:25:25.784976 [INFO] Joined room successfully
+2025-09-02T13:25:25.785316 [INFO] peer_joined: 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:25.785666 [INFO] _initiate_punch: Connecting to 5425b806 at ('127.0.0.1', 64159)
+2025-09-02T13:25:25.786157 [INFO] _initiate_punch: Connecting to 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:25.786531 [INFO] _initiate_punch: Connecting to 6a9746c4 at ('127.0.0.1', 54538)
+2025-09-02T13:25:25.787380 [INFO] _initiate_punch: Connecting to e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:25.787994 [INFO] _network_loop: received 97 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:25.788759 [INFO] punch_request from 53e59902
+2025-09-02T13:25:25.788060 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:25:25.798251 [INFO] _network_loop: received 97 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:25.800255 [INFO] punch_request from e68d4e00
+2025-09-02T13:25:25.800870 [INFO] _network_loop: received 67 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:25.800913 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:25:25.801586 [INFO] punch_response from 53e59902
+2025-09-02T13:25:25.802103 [INFO] Connected to peer: 53e59902
+tes from ('127.0.0.1', 61791)
+2025-09-02T13:25:25.802736 [INFO] punch_response from e68d4e00
+2025-09-02T13:25:25.803262 [INFO] Connected to peer: e68d4e00
+2025-09-02T13:25:25.810063 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:25.810048 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:25.920642 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:25.920595 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.030912 [INFO] _network_loop: received 72 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.030876 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.036660 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:26.036683 [INFO] _network_loop: received 246 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:26.052438 [INFO] _network_loop: received 52 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.052393 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.157272 [INFO] _network_loop: received 48 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.157254 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.385304 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.385277 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.489189 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 61791)
+ 55184)
+2025-09-02T13:25:26.602727 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.602884 [INFO] _network_loop: received 90 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.715828 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.715769 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.827278 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.828676 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:26.828678 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.840713 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:26.842682 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.842620 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.844851 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:26.855855 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:26.855830 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:26.971355 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 61791)
+ 55184)
+2025-09-02T13:25:27.083810 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:27.197526 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:27.310352 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:27.423290 [INFO] _network_loop: received 226 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:27.535370 [INFO] _network_loop: received 246 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:27.648750 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:27.761517 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:27.761586 [INFO] _network_loop: received 226 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:27.874659 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:27.986087 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:27.986155 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:28.098188 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:28.098108 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:28.210321 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:28.323206 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:28.549911 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:28.774099 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:28.775378 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:28.775204 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:28.786720 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:28.791029 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:28.792322 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:28.804238 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:28.804270 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:28.902118 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:28.902085 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:29.239271 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:29.239343 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:29.240335 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:29.240180 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:29.255463 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 61791)
+ 55184)
+2025-09-02T13:25:29.594868 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:30.374000 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:31.370475 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:31.370372 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.157116 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:32.267507 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.268566 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.268546 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.278725 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.284202 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.306178 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.307183 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.314484 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.321280 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.321309 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.322436 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.330207 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.338338 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.339391 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.346926 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.355655 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.355629 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.356499 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.363975 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.371289 [INFO] _network_loop: received 72 bytes from ('127.0.0.1', 61791)
+ 55184)
+2025-09-02T13:25:32.372404 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.380528 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.385523 [INFO] _network_loop: received 52 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.385488 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.386569 [INFO] _network_loop: received 72 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.393676 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.411196 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.412191 [INFO] _network_loop: received 52 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.419840 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.429148 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 61791)
+ 55184)
+2025-09-02T13:25:32.430319 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.437234 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.445384 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.445333 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.446441 [INFO] _network_loop: received 76 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.454211 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.461022 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.460998 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.462046 [INFO] _network_loop: received 40 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.469694 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.477015 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:32.478002 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.483857 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.484764 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.495596 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.495560 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.501255 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.501288 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.617077 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.617138 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.729388 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.730656 [INFO] _network_loop: received 72 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.730635 [INFO] _network_loop: received 72 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.741535 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.742026 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.742102 [INFO] _network_loop: received 52 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.742989 [INFO] _network_loop: received 52 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.753359 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.755433 [INFO] _network_loop: received 48 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.755413 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.756317 [INFO] _network_loop: received 56 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:32.764798 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:32.768737 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:32.768763 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:32.769464 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.101907 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+ 61791)
+2025-09-02T13:25:33.215805 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+ 61791)
+2025-09-02T13:25:33.327234 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.327292 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.328188 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.328600 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.338533 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.342186 [INFO] _network_loop: received 90 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.342174 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.343201 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.350585 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.357055 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.357036 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.358129 [INFO] _network_loop: received 90 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.366022 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.371422 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.371388 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.372304 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.379632 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.385267 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.385254 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.386427 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.393694 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.399215 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.399196 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.400228 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.406071 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.412622 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.412603 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.413733 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.519672 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.521049 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.521114 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.533023 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.536716 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.537680 [INFO] _network_loop: received 90 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.761263 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.761572 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.762591 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.762477 [INFO] _network_loop: received 70 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.774462 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.775771 [INFO] _network_loop: received 90 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.775755 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.776516 [INFO] _network_loop: received 90 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.788123 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.792206 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.792237 [INFO] _network_loop: received 226 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.793613 [INFO] _network_loop: received 226 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.806809 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.812980 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.814189 [INFO] _network_loop: received 246 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.821460 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:33.829004 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:33.829238 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:33.829966 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:33.935772 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+ 61791)
+2025-09-02T13:25:34.046600 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+ 61791)
+2025-09-02T13:25:34.158599 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:34.158707 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:34.609489 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+ 61791)
+2025-09-02T13:25:34.720830 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:34.720883 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:34.826791 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:34.827701 [INFO] _network_loop: received 226 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:34.827700 [INFO] _network_loop: received 96 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:34.841573 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:34.843020 [INFO] _network_loop: received 246 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:34.842979 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:34.843804 [INFO] _network_loop: received 226 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:34.852869 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:34.857481 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:34.857456 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:34.858662 [INFO] _network_loop: received 246 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:34.864762 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:34.865142 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:35.527916 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:35.535833 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:35.535811 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:35.860785 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:35.860947 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:35.862831 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:35.862981 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:36.861108 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:36.861107 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:36.862177 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:36.862067 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:36.875712 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:36.878592 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:36.878617 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:36.879492 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:36.893117 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:36.892381 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:36.894404 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:36.894705 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:36.913543 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:36.917336 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+ 61791)
+2025-09-02T13:25:36.918268 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:36.930745 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:36.936175 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 55184)
+61791)
+2025-09-02T13:25:36.937231 [INFO] _network_loop: received 198 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:37.890652 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+ 55184)
+2025-09-02T13:25:37.902515 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:37.917105 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:37.925943 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:37.925911 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:37.943320 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:37.943272 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:37.953208 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:37.953168 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:37.972398 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:37.982162 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:37.982203 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:38.184870 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:38.184917 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:38.196848 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+55184)
+2025-09-02T13:25:38.210342 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 55184)
+61791)
+2025-09-02T13:25:38.245027 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:38.548980 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:38.548977 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:38.550145 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:38.550194 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:39.848558 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:39.849591 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:39.849589 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:39.871308 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:39.872511 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:39.872515 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:39.892998 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:39.896086 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:39.896218 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:39.897014 [INFO] _network_loop: received 68 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:39.916409 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:39.919136 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 55184)
+ 61791)
+2025-09-02T13:25:39.920292 [INFO] _network_loop: received 88 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:41.229286 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:41.229353 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:41.237637 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:41.254062 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:41.254102 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:41.263833 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:41.263810 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:25:41.594712 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 55184)
+61791)
+2025-09-02T13:25:41.603811 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:41.603859 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 61791)
+2025-09-02T13:25:44.534823 [INFO] _network_loop: sent packet to peer e68d4e00 at ('127.0.0.1', 61791)
+2025-09-02T13:25:44.536747 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:25:44.537744 [INFO] _network_loop: received 165 bytes from ('127.0.0.1', 55184)
+2025-09-02T13:26:12.051160 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.054434 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.085874 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.087476 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.092650 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.093715 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.103349 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.104397 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.108068 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.108767 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.112234 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.113205 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.117237 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.118096 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.122703 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.123512 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.126118 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.127071 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.131685 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.132483 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.136186 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.136899 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.249056 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.250063 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.253762 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.254477 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.257723 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.258610 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.371421 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.372084 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.584298 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.585314 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:12.588889 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:12.589486 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:13.007906 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:13.008754 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:13.011268 [INFO] _network_loop: sent packet to peer 53e59902 at ('127.0.0.1', 55184)
+2025-09-02T13:26:13.011770 [ERROR] _network_loop: recvfrom failed
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\lan\l\client.py", line 304, in _network_loop
+    data, addr = self.udp_socket.recvfrom(65536)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2025-09-02T13:26:13.436199 [INFO] VPNClient.stop: stopping client
+2025-09-02T13:26:13.437050 [INFO] VPNClient.stop: UDP socket closed
+2025-09-02T13:26:13.467799 [INFO] stop_session: session stopped
