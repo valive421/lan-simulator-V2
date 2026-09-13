@@ -1096,3 +1096,804 @@ ConnectionResetError: [WinError 10054] An existing connection was forcibly close
 2026-09-13T18:33:51.196926 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
 2026-09-13T18:33:51.197708 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
 2026-09-13T18:33:51.198372 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:33:55.256857 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'd266935f', 'username': 'Player_6bcec5a2'}
+2026-09-13T18:33:55.257545 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:33:55.258363 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:33:55.258808 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:06.208583 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ed3bc662', 'username': 'Player_3749cdb7'}
+2026-09-13T18:34:06.209350 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:06.210031 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:06.210475 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:10.267590 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'd266935f', 'username': 'Player_6bcec5a2'}
+2026-09-13T18:34:10.268418 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:10.269180 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:10.269664 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:16.755551 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:34:16.756738 [INFO] [ROUTE] IPv4 packet src=169.254.118.251 dst=239.255.255.250 bytes=198
+2026-09-13T18:34:16.757343 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:34:17.769602 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:34:17.770623 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=239.255.255.250 bytes=198
+
+2026-09-13T18:34:17.771456 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:34:17.771571 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:34:18.775909 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:34:18.776933 [INFO] [ROUTE] IPv4 packet src=169.254.118.251 dst=239.255.255.250 bytes=198
+2026-09-13T18:34:18.777056 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=239.255.255.250 bytes=198
+2026-09-13T18:34:18.777694 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:34:18.777977 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:34:19.778995 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:34:19.779990 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=239.255.255.250 bytes=198
+2026-09-13T18:34:19.780078 [INFO] [ROUTE] IPv4 packet src=169.254.118.251 dst=239.255.255.250 bytes=198
+2026-09-13T18:34:19.780620 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:34:19.780764 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:34:21.218207 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ed3bc662', 'username': 'Player_3749cdb7'}
+2026-09-13T18:34:21.219289 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:21.219986 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:21.220543 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:25.277962 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'd266935f', 'username': 'Player_6bcec5a2'}
+2026-09-13T18:34:25.278877 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:25.279521 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:25.279995 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:36.231558 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ed3bc662', 'username': 'Player_3749cdb7'}
+2026-09-13T18:34:36.232290 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:36.233055 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:36.233586 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:40.290902 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'd266935f', 'username': 'Player_6bcec5a2'}
+2026-09-13T18:34:40.291631 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:40.292357 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:40.292879 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:51.243794 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ed3bc662', 'username': 'Player_3749cdb7'}
+2026-09-13T18:34:51.244577 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:51.245255 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:51.245812 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:34:55.302901 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'd266935f', 'username': 'Player_6bcec5a2'}
+2026-09-13T18:34:55.303805 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:34:55.304391 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:34:55.304819 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:06.256345 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ed3bc662', 'username': 'Player_3749cdb7'}
+2026-09-13T18:35:06.257135 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:35:06.257887 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:35:06.258381 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:10.316579 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'd266935f', 'username': 'Player_6bcec5a2'}
+2026-09-13T18:35:10.317620 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:35:10.318536 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:35:10.319115 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:21.268314 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ed3bc662', 'username': 'Player_3749cdb7'}
+2026-09-13T18:35:21.269389 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:35:21.270262 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:35:21.270705 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:25.328405 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'd266935f', 'username': 'Player_6bcec5a2'}
+2026-09-13T18:35:25.329695 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:35:25.330329 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:35:25.331146 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:36.281773 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ed3bc662', 'username': 'Player_3749cdb7'}
+2026-09-13T18:35:36.282678 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:35:36.283543 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:35:36.284124 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:37.077195 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:37.093307 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:37.095357 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:37.101065 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.123817 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:37.139837 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:37.141655 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:37.142207 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.155845 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:37.171655 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:37.187679 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:37.189096 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:37.189658 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.203266 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:37.204502 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:37.205146 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.219637 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:35:37.235466 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:35:37.236658 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.252 bytes=52
+2026-09-13T18:35:37.237207 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.251622 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:35:37.252937 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=239.255.255.250 bytes=165
+2026-09-13T18:35:37.253626 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.267624 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:37.269327 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:37.269876 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.283750 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:37.299321 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:37.315067 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:37.316342 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:37.317071 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.330941 [INFO] [TUN RX] packet_received bytes=56
+2026-09-13T18:35:37.332311 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.22 bytes=56
+2026-09-13T18:35:37.333017 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.347057 [INFO] [TUN RX] packet_received bytes=116
+2026-09-13T18:35:37.425894 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:35:37.426498 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=239.255.255.250 bytes=165
+2026-09-13T18:35:37.427053 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.457472 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:35:37.458354 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=239.255.255.250 bytes=165
+2026-09-13T18:35:37.458945 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:37.536621 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:35:37.552065 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:35:37.552902 [INFO] [ROUTE] IPv4 packet src=169.254.152.65 dst=224.0.0.252 bytes=52
+2026-09-13T18:35:37.553811 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:48.465364 [INFO] [GUI] CREATE ROOM button clicked
+2026-09-13T18:35:48.466136 [INFO] [GUI] Creating VPNClient with server='80.225.223.253':5000
+2026-09-13T18:35:48.466533 [INFO] [GUI] VPNClient actual server_host='80.225.223.253' server_port=5000
+2026-09-13T18:35:48.466839 [INFO] [GUI] Calling VPNClient.start()
+2026-09-13T18:35:48.467819 [INFO] [START] UDP socket bound: local=('0.0.0.0', 65044)
+2026-09-13T18:35:48.468204 [INFO] [START] HARD-CODED SERVER: host='80.225.223.253' port=5000
+2026-09-13T18:35:48.468509 [INFO] [START] Server endpoint: ('80.225.223.253', 5000)
+2026-09-13T18:35:48.675233 [INFO] [GUI] Calling create_room(room='1')
+2026-09-13T18:35:48.675918 [INFO] [ROOM] Create requested: room_id='1' username='Player_1546cd1e'
+2026-09-13T18:35:48.676693 [INFO] [ROOM] Target server: 80.225.223.253:5000
+2026-09-13T18:35:48.677098 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'create_room', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:35:48.677816 [INFO] [UDP TX] CONTROL bytes=92 destination=('80.225.223.253', 5000) action=create_room
+2026-09-13T18:35:48.678448 [INFO] [UDP TX] CONTROL sendto returned=92 destination=('80.225.223.253', 5000)
+2026-09-13T18:35:48.679228 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:48.716146 [INFO] [TUN RX] packet_received bytes=64
+2026-09-13T18:35:48.740255 [INFO] [TUN RX] packet_received bytes=48
+2026-09-13T18:35:48.759930 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:49.175679 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:35:49.176277 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:35:49.176748 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:35:49.177154 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:35:49.219375 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:49.726348 [INFO] [TUN RX] packet_received bytes=64
+2026-09-13T18:35:49.747091 [INFO] [TUN RX] packet_received bytes=48
+2026-09-13T18:35:49.761107 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:49.774901 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:35:49.788789 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:50.142905 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:35:50.219534 [INFO] [TUN RX] packet_received bytes=116
+2026-09-13T18:35:50.719445 [INFO] [TUN RX] packet_received bytes=48
+2026-09-13T18:35:54.747391 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:54.761419 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:55.212767 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:58.226635 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:58.247451 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:58.248177 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:58.248913 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.261303 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:58.275221 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:58.276506 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:58.276893 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.295983 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:58.309904 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:58.323789 [INFO] [TUN RX] packet_received bytes=48
+2026-09-13T18:35:58.325277 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=48
+2026-09-13T18:35:58.325760 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.344609 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:35:58.358557 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:35:58.359705 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.252 bytes=52
+2026-09-13T18:35:58.360179 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.372368 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:58.393265 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:35:58.407082 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:35:58.408662 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:35:58.409245 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.420989 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:58.422384 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:58.422926 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.434962 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:58.436511 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:58.436893 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.448792 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:58.450296 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:58.450941 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.643166 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:35:58.657028 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:35:58.657966 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.252 bytes=52
+2026-09-13T18:35:58.658634 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.712827 [INFO] [TUN RX] packet_received bytes=56
+2026-09-13T18:35:58.713729 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=56
+2026-09-13T18:35:58.714398 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:58.726566 [INFO] [TUN RX] packet_received bytes=116
+2026-09-13T18:35:59.059759 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:59.060660 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:59.061078 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:59.073597 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:59.075088 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:59.075583 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:59.087608 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:59.088861 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:59.089499 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:59.163876 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:35:59.164787 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:35:59.165203 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:59.754357 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:35:59.755538 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:35:59.756049 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:59.816984 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:59.818114 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:59.818669 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:59.830829 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:59.844180 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:59.845704 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:35:59.856588 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:35:59.857348 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:35:59.858005 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:00.563410 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:00.564192 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:00.564778 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:00.575063 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:00.575644 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:00.576184 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:00.594148 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:00.594926 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:00.595704 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:00.761347 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:00.763537 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:00.765593 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:01.767700 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:01.768849 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:01.769411 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.038549 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:02.039377 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:02.040029 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.066465 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:02.067557 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:02.067995 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.172666 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:02.173578 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:02.174072 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.761036 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:02.762348 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:02.762837 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:03.409358 [INFO] [GUI] JOIN ROOM button clicked
+2026-09-13T18:36:03.409975 [INFO] [GUI] Creating VPNClient with server='80.225.223.253':5000
+2026-09-13T18:36:03.410444 [INFO] [GUI] VPNClient actual server_host='80.225.223.253' server_port=5000
+2026-09-13T18:36:03.410846 [INFO] [GUI] Calling VPNClient.start()
+2026-09-13T18:36:03.411933 [INFO] [START] UDP socket bound: local=('0.0.0.0', 58953)
+2026-09-13T18:36:03.412214 [INFO] [START] HARD-CODED SERVER: host='80.225.223.253' port=5000
+2026-09-13T18:36:03.412493 [INFO] [START] Server endpoint: ('80.225.223.253', 5000)
+2026-09-13T18:36:03.605798 [INFO] [GUI] Calling join_room(room='1')
+2026-09-13T18:36:03.607539 [INFO] [ROOM] Join requested: room_id='1' username='Player_d51fab0d'
+2026-09-13T18:36:03.609059 [INFO] [ROOM] Target server: 80.225.223.253:5000
+2026-09-13T18:36:03.609632 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'join_room', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:36:03.611234 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=join_room
+2026-09-13T18:36:03.612418 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:03.613369 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:03.722650 [INFO] [TUN RX] packet_received bytes=64
+2026-09-13T18:36:03.732718 [INFO] [TUN RX] packet_received bytes=48
+2026-09-13T18:36:03.746972 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.089143 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:36:01.089795 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:01.090306 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:01.090660 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:01.195153 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.705295 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.729840 [INFO] [TUN RX] packet_received bytes=48
+2026-09-13T18:36:01.730967 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:01.731511 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:01.743764 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.743764 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.757592 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.757607 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:01.759073 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:01.759482 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:01.771541 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:36:01.771541 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.785463 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.785463 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.799293 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:01.800580 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:01.801125 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:01.813156 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:01.814747 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:01.815181 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:01.827039 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:36:01.840920 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:36:01.842245 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.252 bytes=52
+2026-09-13T18:36:01.842726 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:01.854802 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:01.856308 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:01.856685 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:01.868743 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.882626 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:01.896479 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:01.898117 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:01.898535 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.132638 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:36:02.146545 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:36:02.148395 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.252 bytes=52
+2026-09-13T18:36:02.148828 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.160325 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:02.161783 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:02.162290 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.201946 [INFO] [TUN RX] packet_received bytes=56
+
+2026-09-13T18:36:02.202820 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=56
+2026-09-13T18:36:02.203649 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:02.215919 [INFO] [TUN RX] packet_received bytes=116
+2026-09-13T18:36:02.695228 [INFO] [TUN RX] packet_received bytes=48
+2026-09-13T18:36:03.146482 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:03.147407 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:03.148220 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:04.176553 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:36:04.177387 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:04.177972 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:04.178376 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:05.063115 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:05.064228 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:05.064830 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:05.092196 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:05.093055 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:05.093706 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:06.147330 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:06.148296 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:06.148803 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:06.729970 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:06.731088 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:06.732410 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:06.744601 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:06.744582 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:06.758395 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:06.778556 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:06.780125 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:06.780727 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:07.209765 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:07.210919 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:07.211457 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:07.229952 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:08.229967 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:08.230969 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:08.231521 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:09.160738 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:09.161827 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:09.162500 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:09.244446 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:09.245317 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:09.245811 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.209823 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.229967 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.230973 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.231001 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.232245 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.244527 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.244423 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.265167 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.265172 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.266623 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.266834 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.267173 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.267387 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.278490 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.292736 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.292736 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.306983 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.307028 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.308426 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.308534 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.308969 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.309039 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.320751 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.320746 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.322351 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.322532 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.323065 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.334021 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:36:10.334021 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:36:10.355429 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:36:10.357401 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.252 bytes=52
+2026-09-13T18:36:10.357470 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.252 bytes=52
+2026-09-13T18:36:10.357933 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.358017 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.369456 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.371240 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.371723 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.382726 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.382812 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.396709 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.396710 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:36:10.398027 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.398581 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.411085 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:36:10.411086 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:10.412662 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=40
+2026-09-13T18:36:10.412761 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:10.413149 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.413312 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.424405 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:10.426335 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:10.426237 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:10.426837 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.426906 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.439375 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:10.440891 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:10.441325 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.632588 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:36:10.646989 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:36:10.647992 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.252 bytes=52
+2026-09-13T18:36:10.647926 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.252 bytes=52
+2026-09-13T18:36:10.648596 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.709615 [INFO] [TUN RX] packet_received bytes=56
+2026-09-13T18:36:10.710656 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=224.0.0.22 bytes=56
+2026-09-13T18:36:10.711455 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:10.723570 [INFO] [TUN RX] packet_received bytes=116
+2026-09-13T18:36:11.049863 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:11.050828 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:11.051345 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.063461 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:11.065219 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:11.065728 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.077037 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:11.078343 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:11.078805 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.257993 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:11.258956 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:11.259465 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.729844 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:11.730790 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:11.730867 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:11.732610 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.732638 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.794292 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:11.795329 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:11.795799 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.807049 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:11.808423 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:11.808952 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:11.820513 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:11.821423 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:11.821950 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:12.167892 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:12.168896 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:12.169013 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:12.169582 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:12.169763 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:12.563719 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:12.564715 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:12.565185 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:12.577107 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:12.578568 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:12.579017 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:12.592335 [INFO] [TUN RX] packet_received bytes=96
+2026-09-13T18:36:12.593568 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=169.254.255.255 bytes=96
+2026-09-13T18:36:12.593999 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:12.744555 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:12.745721 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:12.745790 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:12.746258 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:12.746423 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:13.147055 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:13.148103 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:13.148174 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:13.148591 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:13.148966 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:13.744293 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:13.745326 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:13.745392 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:13.745795 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:13.745960 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:14.098296 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:14.099315 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:14.099315 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:14.099805 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:14.099908 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:14.125623 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:14.126683 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:14.126763 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:14.127144 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:14.127313 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:14.758103 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:36:14.759199 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:14.759264 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:36:14.759778 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:14.760066 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:16.100738 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:36:16.101655 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:16.102395 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:16.102886 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:16.169844 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:16.170937 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:16.170803 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:16.171511 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:16.171593 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:17.135585 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:17.136680 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:17.136588 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:17.137284 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:17.137451 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:17.175431 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:17.176386 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:17.177144 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:17.177209 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:19.173060 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:36:19.174062 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=165
+2026-09-13T18:36:19.175065 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:36:19.187323 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:36:19.188167 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:19.188941 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:19.189474 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:31.114745 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:36:31.115705 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:31.116358 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:31.116836 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:34.200359 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:36:34.201090 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:34.201633 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:34.202079 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:46.127931 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:36:46.128696 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:46.129393 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:46.129973 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:36:49.211426 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:36:49.212442 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:36:49.214498 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:36:49.215105 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:01.140954 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:37:01.141891 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:01.142558 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:01.143042 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:04.225917 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:37:04.226750 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:04.227490 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:04.227974 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:16.154225 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:37:16.155205 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:16.155821 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:16.156309 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:19.239595 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:37:19.240254 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:19.240808 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:19.241410 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:31.166921 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:37:31.167825 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:31.168459 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:31.168943 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:34.252398 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:37:34.253250 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:34.254063 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:34.254596 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:46.178485 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:37:46.179300 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:46.180040 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:46.180680 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:37:49.263956 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:37:49.265052 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:37:49.265865 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:37:49.266331 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:01.192138 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:38:01.193193 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:01.194218 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:01.194856 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:04.275784 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:38:04.276807 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:04.277687 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:04.278294 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:11.729625 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:38:11.729625 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:38:11.730706 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:11.730636 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:11.731332 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:11.731624 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:12.749573 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:38:12.751226 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:12.751112 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:12.751910 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:12.752186 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:13.763183 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:38:13.764265 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:13.764343 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:13.764907 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:13.765135 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:14.764800 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:38:14.765816 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:14.765941 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:38:14.766291 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:14.766627 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:38:16.204274 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:38:16.205109 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:16.205702 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:16.206245 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:19.288346 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:38:19.289338 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:19.290158 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:19.290806 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:31.216276 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:38:31.217055 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:31.217870 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:31.218380 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:34.301923 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:38:34.302790 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:34.303554 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:34.304240 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:46.228416 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:38:46.229494 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:46.230191 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:46.230694 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:38:49.315123 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:38:49.316076 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:38:49.316794 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:38:49.317277 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:01.240322 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:39:01.241672 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:01.242710 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:01.243342 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:04.328308 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:39:04.329076 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:04.329733 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:04.330237 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:16.252906 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:39:16.253871 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:16.254572 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:16.255171 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:19.340141 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:39:19.340960 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:19.341691 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:19.342216 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:31.265562 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:39:31.266411 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:31.267086 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:31.267596 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:34.353579 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:39:34.354446 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:34.355069 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:34.355562 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:46.277089 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:39:46.277822 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:46.278482 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:46.278975 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:39:49.368932 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:39:49.369897 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:39:49.370522 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:39:49.371037 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:01.289680 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:40:01.290756 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:01.291572 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:01.292084 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:04.380250 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:40:04.381174 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:04.381869 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:04.382396 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:11.744560 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:40:11.745549 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:40:11.745635 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:40:11.746335 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:11.746432 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:11.919670 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:40:11.920507 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.169.254 bytes=52
+2026-09-13T18:40:11.921198 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:11.935811 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:40:11.937165 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.169.254 bytes=52
+2026-09-13T18:40:11.937669 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:12.761460 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:40:12.762485 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:40:12.762605 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=239.255.255.250 bytes=198
+2026-09-13T18:40:12.763545 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:12.763874 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:12.934590 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:40:12.935581 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.169.254 bytes=52
+2026-09-13T18:40:12.936253 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:12.950050 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:40:12.951548 [INFO] [ROUTE] IPv4 packet src=169.254.58.175 dst=169.254.169.254 bytes=52
+2026-09-13T18:40:12.952130 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:13.774955 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:40:13.776294 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+
+2026-09-13T18:40:13.777080 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:13.777168 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:14.788391 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:40:14.789474 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+
+2026-09-13T18:40:14.790394 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:14.790447 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:40:16.302413 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:40:16.303491 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:16.304425 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:16.304982 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:19.391908 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:40:19.393040 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:19.394060 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:19.394672 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:31.313709 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:40:31.314664 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:31.315339 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:31.315852 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:34.404040 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:40:34.404970 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:34.405604 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:34.406064 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:46.323333 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:40:46.324360 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:46.325061 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:46.325720 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:40:49.416061 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:40:49.416871 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:40:49.417594 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:40:49.418074 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:01.336451 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:41:01.337504 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:01.338338 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:01.338966 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:04.425378 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:41:04.426238 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:04.426777 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:04.427658 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:16.348615 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:41:16.349476 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:16.350202 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:16.350904 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:19.435466 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:41:19.436397 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:19.436989 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:19.437536 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:31.358949 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:41:31.360034 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:31.360634 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:31.361141 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:34.444858 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:41:34.445868 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:34.446381 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:34.446765 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:46.371128 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:41:46.372036 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:46.373181 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:46.373778 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:41:49.457329 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:41:49.458116 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:41:49.458732 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:41:49.459236 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:42:01.383530 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': 'ba9170b0', 'username': 'Player_d51fab0d'}
+2026-09-13T18:42:01.384428 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:42:01.385157 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:42:01.385844 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:42:04.468719 [INFO] [SERVER TX] destination=('80.225.223.253', 5000) message={'action': 'keepalive', 'room_id': '1', 'peer_id': '1af14ade', 'username': 'Player_1546cd1e'}
+2026-09-13T18:42:04.469784 [INFO] [UDP TX] CONTROL bytes=90 destination=('80.225.223.253', 5000) action=keepalive
+2026-09-13T18:42:04.470332 [INFO] [UDP TX] CONTROL sendto returned=90 destination=('80.225.223.253', 5000)
+2026-09-13T18:42:04.470917 [INFO] [SERVER TX] result=SENT destination=('80.225.223.253', 5000)
+2026-09-13T18:42:11.759714 [INFO] [TUN RX] packet_received bytes=198
+2026-09-13T18:42:11.780129 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=198
+2026-09-13T18:42:11.786085 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:11.806431 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:11.821423 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:11.822617 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:11.823649 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:11.837775 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:11.853096 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:11.853812 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:11.854622 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:11.869163 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:11.884352 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:11.899677 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:11.901413 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:11.901946 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:11.914657 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:11.916621 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:11.917169 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:11.930465 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:42:11.946328 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:42:11.947549 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.252 bytes=52
+2026-09-13T18:42:11.948362 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:11.962517 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:11.978218 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:11.979550 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:11.980202 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:11.993710 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:42:11.995193 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:42:11.996026 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:12.008743 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:12.024708 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:12.026321 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:12.027010 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:12.039982 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:12.041415 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:12.042363 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:12.055492 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:12.070769 [INFO] [TUN RX] packet_received bytes=76
+2026-09-13T18:42:12.086214 [INFO] [TUN RX] packet_received bytes=40
+2026-09-13T18:42:12.087993 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=40
+2026-09-13T18:42:12.088628 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:12.132633 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:42:12.134550 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:42:12.137170 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:12.163837 [INFO] [TUN RX] packet_received bytes=165
+2026-09-13T18:42:12.164712 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=239.255.255.250 bytes=165
+2026-09-13T18:42:12.165618 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:12.209988 [INFO] [TUN RX] packet_received bytes=56
+2026-09-13T18:42:12.210819 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.22 bytes=56
+2026-09-13T18:42:12.211759 [INFO] [ROUTE] selected_peers=[]
+2026-09-13T18:42:12.225337 [INFO] [TUN RX] packet_received bytes=116
+2026-09-13T18:42:12.240813 [INFO] [TUN RX] packet_received bytes=72
+2026-09-13T18:42:12.256710 [INFO] [TUN RX] packet_received bytes=52
+2026-09-13T18:42:12.258894 [INFO] [ROUTE] IPv4 packet src=169.254.32.71 dst=224.0.0.252 bytes=52
+2026-09-13T18:42:12.259719 [INFO] [ROUTE] selected_peers=[]

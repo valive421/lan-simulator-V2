@@ -611,10 +611,14 @@ def run():
         f"HTTP health endpoint on {HTTP_HOST}:{HTTP_PORT}"
     )
 
+    # Never let Flask spawn a reloader process under systemd. The UDP
+    # listener runs in a background thread in this same process.
     app.run(
         host=HTTP_HOST,
         port=HTTP_PORT,
         threaded=True,
+        debug=False,
+        use_reloader=False,
     )
 
 
