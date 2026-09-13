@@ -230,7 +230,9 @@ class VPNClient:
             # Keep the same local UDP socket for the whole session. The rendezvous
             # server observes the NAT mapping created by this socket.
             self.udp_socket.bind(("0.0.0.0", 0))
-            debug(f"UDP socket: {self.udp_socket.getsockname()}")
+            debug(f"[START] UDP socket bound: local={self.udp_socket.getsockname()}")
+            debug(f"[START] HARD-CODED SERVER: host={self.server_host!r} port={self.server_port}")
+            debug(f"[START] Server endpoint: {(self.server_host, self.server_port)}")
 
             if not self.wintun.create_adapter(self.adapter_name):
                 return False
@@ -300,6 +302,8 @@ class VPNClient:
     # -----------------------------
 
     def create_room(self, room_id, username):
+        debug(f"[ROOM] Create requested: room_id={room_id!r} username={username!r}")
+        debug(f"[ROOM] Target server: {self.server_host}:{self.server_port}")
         self.room_id = room_id.strip()
         self.username = username.strip() or self.username
         self._send_to_server({
@@ -310,6 +314,8 @@ class VPNClient:
         })
 
     def join_room(self, room_id, username):
+        debug(f"[ROOM] Join requested: room_id={room_id!r} username={username!r}")
+        debug(f"[ROOM] Target server: {self.server_host}:{self.server_port}")
         self.room_id = room_id.strip()
         self.username = username.strip() or self.username
         self._send_to_server({
@@ -342,6 +348,7 @@ class VPNClient:
                 readable, _, _ = select.select([self.udp_socket], [], [], 0.01)
                 if self.udp_socket in readable:
                     data, addr = self.udp_socket.recvfrom(MAX_UDP)
+                    debug(f"[UDP RX] bytes={len(data)} source={addr} magic={data[:4]!r}")
                     self._handle_udp(data, addr)
 
                 # WintunReceivePacket is polled; never block the UDP socket.
@@ -385,6 +392,7 @@ class VPNClient:
 
     def _handle_control(self, message, addr):
         action = message.get("action")
+        debug(f"[CONTROL RX] source={addr} action={action!r} message={message}")
 
         if action in ("room_created", "room_joined", "peer_list"):
             members = message.get("members", {})
@@ -532,4 +540,303 @@ class VPNClient:
                     info["state"] = "RELAY"
                     debug(f"No direct path to {peer_id}; relay fallback enabled", "WARNING")
         finally:
-   
+            pass
+
+    def _valid_addr(self, public_ip, public_port):
+        try:
+            ip = ipaddress.ip_address(str(public_ip))
+            port = int(public_port)
+            if ip.version != 4 or not 1 <= port <= 65535:
+                return None
+            return str(ip), port
+        except (ValueError, TypeError):
+            return None
+
+    def _send_message(self, message, addr):
+        if not self.udp_socket or not addr:
+            return False
+        try:
+            payload = pack_control(message)
+            debug(f"[UDP TX] CONTROL bytes={len(payload)} destination={addr} action={message.get('action')}")
+            sent = self.udp_socket.sendto(payload, addr)
+            debug(f"[UDP TX] CONTROL sendto returned={sent} destination={addr}")
+            return sent == len(payload)
+        except OSError as e:
+            debug(f"UDP send failed to {addr}", "WARNING", e)
+            return False
+
+    def _send_to_server(self, message):
+        addr = (self.server_host, self.server_port)
+        debug(f"[SERVER TX] destination={addr} message={message}")
+        result = self._send_message(message, addr)
+        debug(f"[SERVER TX] result={'SENT' if result else 'FAILED'} destination={addr}")
+        return result
+
+    def _keepalive_loop(self):
+        last_peer_ping = 0.0
+        while self.running:
+            now = time.time()
+
+            if self.room_id and now - self.last_server_keepalive >= SERVER_KEEPALIVE:
+                self._send_to_server({
+                    "action": "keepalive",
+                    "room_id": self.room_id,
+                    "peer_id": self.peer_id,
+                    "username": self.username,
+                })
+                self.last_server_keepalive = now
+
+            if self.room_id and now - last_peer_ping >= PEER_KEEPALIVE:
+                for pid, info in list(self.room_members.items()):
+                    addr = info.get("addr")
+                    if addr:
+                        self._send_message({
+                            "action": "peer_ping",
+                            "room_id": self.room_id,
+                            "peer_id": self.peer_id,
+                        }, addr)
+                last_peer_ping = now
+
+            cutoff = now - PEER_TIMEOUT
+            for pid, info in list(self.room_members.items()):
+                if info.get("last_rx", 0.0) and info["last_rx"] < cutoff:
+                    self.connected_peers.pop(pid, None)
+                    self.peer_paths.pop(pid, None)
+                    info["state"] = "TIMEOUT"
+
+            time.sleep(0.5)
+
+    def _forward_tun_packet(self, packet):
+        debug(f"[TUN RX] packet_received bytes={len(packet) if packet else 0}")
+        if not packet or len(packet) > OVERLAY_MTU:
+            if packet:
+                debug(f"Dropped oversized WinTun packet ({len(packet)} bytes)", "WARNING")
+            return
+
+        try:
+            if len(packet) < 20 or (packet[0] >> 4) != 4:
+                return
+
+            dst_ip = ipaddress.ip_address(packet[16:20])
+            src_ip = ipaddress.ip_address(packet[12:16])
+            debug(f"[ROUTE] IPv4 packet src={src_ip} dst={dst_ip} bytes={len(packet)}")
+            targets = []
+
+            if dst_ip == ipaddress.IPv4Address("255.255.255.255") or dst_ip.is_multicast:
+                targets = list(self.room_members)
+            else:
+                for pid, info in self.room_members.items():
+                    if info.get("overlay_ip") == str(dst_ip):
+                        targets = [pid]
+                        break
+
+                if not targets and self.overlay_ip:
+                    try:
+                        overlay = ipaddress.ip_network(
+                            f"{self.overlay_ip}/{self.overlay_prefix}", strict=False
+                        )
+                        if dst_ip in overlay:
+                            targets = list(self.room_members)
+                    except ValueError:
+                        pass
+
+            debug(f"[ROUTE] selected_peers={targets}")
+            for pid in targets:
+                self._send_tunnel_packet(pid, packet)
+        except Exception as e:
+            debug("WinTun forwarding failed", "ERROR", e)
+
+    def _send_tunnel_packet(self, peer_id, packet):
+        if len(packet) > OVERLAY_MTU:
+            return False
+
+        if self.peer_paths.get(peer_id) == "direct":
+            addr = self.connected_peers.get(peer_id)
+            if addr:
+                try:
+                    payload = pack_data(self.peer_id, packet)
+                    debug(f"[PEER TX] DIRECT peer={peer_id} destination={addr} bytes={len(payload)}")
+                    sent = self.udp_socket.sendto(payload, addr)
+                    debug(f"[PEER TX] DIRECT result={sent} peer={peer_id}")
+                    return sent == len(payload)
+                except OSError as e:
+                    debug(f"Direct send failed to {peer_id}", "WARNING", e)
+                    self.connected_peers.pop(peer_id, None)
+                    self.peer_paths[peer_id] = "relay"
+
+        try:
+            relay_addr = (self.server_host, self.server_port)
+            payload = pack_relay(peer_id, self.peer_id, packet)
+            debug(f"[PEER TX] RELAY target={peer_id} server={relay_addr} bytes={len(payload)}")
+            sent = self.udp_socket.sendto(payload, relay_addr)
+            debug(f"[PEER TX] RELAY result={sent} target={peer_id}")
+            return sent == len(payload)
+        except OSError as e:
+            debug(f"Relay send failed to {peer_id}", "WARNING", e)
+            return False
+
+    def _handle_peer_packet(self, source_peer, packet, addr, direct=False):
+        if not source_peer or source_peer == self.peer_id:
+            return
+        if len(packet) > OVERLAY_MTU:
+            return
+
+        if direct:
+            self._record_direct_peer(source_peer, addr)
+        else:
+            self._record_relay_peer(source_peer)
+
+        if self.wintun.session:
+            self.wintun.send_packet(packet)
+
+        if self.packet_callback:
+            try:
+                self.packet_callback(source_peer, packet)
+            except Exception as e:
+                debug("Packet callback failed", "WARNING", e)
+
+
+class VPNApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("LAN Simulator")
+        self.root.geometry("720x520")
+        self.client = None
+
+        frame = ttk.Frame(root, padding=14)
+        frame.pack(fill="both", expand=True)
+
+        ttk.Label(frame, text="LAN Simulator",
+                  font=("Segoe UI", 18, "bold")).pack(anchor="w")
+        ttk.Label(frame, text="WinTun overlay • direct P2P • relay fallback").pack(
+            anchor="w", pady=(0, 12)
+        )
+
+        form = ttk.LabelFrame(frame, text="Connection", padding=10)
+        form.pack(fill="x")
+
+        self.server_var = tk.StringVar(value="80.225.223.253")
+        self.port_var = tk.StringVar(value="5000")
+        self.username_var = tk.StringVar(
+            value=f"Player_{str(uuid.uuid4()).replace('-', '')[:8]}"
+        )
+        self.room_var = tk.StringVar()
+
+        for row, (label, var) in enumerate([
+            ("Server", self.server_var),
+            ("UDP Port", self.port_var),
+            ("Username", self.username_var),
+            ("Room ID", self.room_var),
+        ]):
+            ttk.Label(form, text=label).grid(
+                row=row, column=0, sticky="w", padx=(0, 10), pady=5
+            )
+            ttk.Entry(form, textvariable=var, width=42).grid(
+                row=row, column=1, sticky="ew", pady=5
+            )
+        form.columnconfigure(1, weight=1)
+
+        buttons = ttk.Frame(frame)
+        buttons.pack(fill="x", pady=12)
+        ttk.Button(buttons, text="Create Room", command=self.create_room).pack(
+            side="left", padx=(0, 8)
+        )
+        ttk.Button(buttons, text="Join Room", command=self.join_room).pack(
+            side="left", padx=(0, 8)
+        )
+        ttk.Button(buttons, text="Leave / Disconnect", command=self.leave_room).pack(
+            side="left"
+        )
+
+        self.status = tk.StringVar(value="Disconnected")
+        ttk.Label(frame, textvariable=self.status,
+                  font=("Segoe UI", 11, "bold")).pack(anchor="w", pady=(0, 8))
+
+        log_frame = ttk.LabelFrame(frame, text="Log", padding=6)
+        log_frame.pack(fill="both", expand=True)
+        self.log = scrolledtext.ScrolledText(log_frame, state="disabled", wrap="word")
+        self.log.pack(fill="both", expand=True)
+
+        self.root.protocol("WM_DELETE_WINDOW", self.close)
+
+    def _append_log(self, message):
+        self.log.configure(state="normal")
+        self.log.insert("end", message + "\n")
+        self.log.see("end")
+        self.log.configure(state="disabled")
+
+    def _ensure_client(self):
+        if self.client and self.client.running:
+            return True
+
+        host = self.server_var.get().strip()
+        try:
+            port = int(self.port_var.get().strip())
+            if not host or not 1 <= port <= 65535:
+                raise ValueError
+        except ValueError:
+            messagebox.showerror("Invalid server", "Enter a valid server and UDP port.")
+            return False
+
+        debug(f"[GUI] Creating VPNClient with server={host!r}:{port}")
+        self.client = VPNClient(host, port)
+        debug(f"[GUI] VPNClient actual server_host={self.client.server_host!r} server_port={self.client.server_port}")
+        debug("[GUI] Calling VPNClient.start()")
+        if not self.client.start():
+            self.client = None
+            messagebox.showerror(
+                "Client startup failed",
+                "WinTun could not be started. Run as Administrator and ensure "
+                "wintun.dll is beside client.py."
+            )
+            return False
+        return True
+
+    def create_room(self):
+        debug("[GUI] CREATE ROOM button clicked")
+        room = self.room_var.get().strip()
+        if not room:
+            messagebox.showerror("Room ID", "Enter a room ID.")
+            return
+        if self._ensure_client():
+            debug(f"[GUI] Calling create_room(room={room!r})")
+            self.client.create_room(room, self.username_var.get().strip())
+            self.status.set(f"Creating room: {room}")
+
+    def join_room(self):
+        debug("[GUI] JOIN ROOM button clicked")
+        room = self.room_var.get().strip()
+        if not room:
+            messagebox.showerror("Room ID", "Enter a room ID.")
+            return
+        if self._ensure_client():
+            debug(f"[GUI] Calling join_room(room={room!r})")
+            self.client.join_room(room, self.username_var.get().strip())
+            self.status.set(f"Joining room: {room}")
+
+    def leave_room(self):
+        if self.client:
+            try:
+                self.client.leave_room()
+                self.client.stop()
+            except Exception as e:
+                debug("Disconnect failed", "WARNING", e)
+            self.client = None
+        self.status.set("Disconnected")
+
+    def close(self):
+        self.leave_room()
+        self.root.destroy()
+
+
+def main():
+    if os.name != "nt":
+        print("This client requires Windows.")
+        return
+    root = tk.Tk()
+    VPNApp(root)
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()

@@ -4,10 +4,9 @@ import socket
 import threading
 import time
 import hashlib
+import traceback
 from flask import Flask
 
-# UDP_PORT must be publicly reachable over UDP.
-# HTTP_PORT is only a health/status endpoint.
 UDP_HOST = os.environ.get("UDP_HOST", "0.0.0.0")
 UDP_PORT = int(os.environ.get("UDP_PORT", "5000"))
 HTTP_HOST = os.environ.get("HTTP_HOST", "0.0.0.0")
@@ -20,9 +19,17 @@ OVERLAY_MTU = 1350
 MAX_UDP = 65535
 PEER_TIMEOUT = 60
 
+LOG_PREFIX = "[SERVER]"
+
+
+def log(msg):
+    print(f"{LOG_PREFIX} {msg}", flush=True)
+
 
 def pack_control(message):
-    return CONTROL_MAGIC + json.dumps(message, separators=(",", ":")).encode("utf-8")
+    return CONTROL_MAGIC + json.dumps(
+        message, separators=(",", ":"), ensure_ascii=False
+    ).encode("utf-8")
 
 
 def unpack_control(data):
@@ -30,7 +37,8 @@ def unpack_control(data):
         return None
     try:
         return json.loads(data[len(CONTROL_MAGIC):].decode("utf-8"))
-    except Exception:
+    except Exception as e:
+        log(f"[CONTROL] JSON decode error: {e}")
         return None
 
 
@@ -53,8 +61,6 @@ class RoomServer:
 
     @staticmethod
     def overlay_subnet(room_id):
-        # Deterministic /24 per room. This is a prototype allocation strategy;
-        # a production deployment should maintain a persistent collision-free allocator.
         octet = int(hashlib.sha256(room_id.encode("utf-8")).hexdigest()[:2], 16)
         if octet in (0, 1, 255):
             octet = 2
@@ -64,10 +70,12 @@ class RoomServer:
         used = {m["overlay_ip"] for m in room["members"].values()}
         subnet = room["subnet"].split("/")[0]
         base = subnet.rsplit(".", 1)[0]
+
         for n in range(1, 255):
             candidate = f"{base}.{n}"
             if candidate not in used:
                 return candidate
+
         raise RuntimeError("Room is full")
 
     def start(self):
@@ -75,9 +83,20 @@ class RoomServer:
         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.socket.bind((self.host, self.port))
         self.running = True
-        threading.Thread(target=self._receive_loop, daemon=True).start()
-        threading.Thread(target=self._cleanup_loop, daemon=True).start()
-        print(f"UDP rendezvous/relay listening on {self.host}:{self.port}")
+
+        threading.Thread(
+            target=self._receive_loop,
+            name="udp-receive",
+            daemon=True,
+        ).start()
+
+        threading.Thread(
+            target=self._cleanup_loop,
+            name="cleanup",
+            daemon=True,
+        ).start()
+
+        log(f"UDP rendezvous/relay listening on {self.host}:{self.port}")
         return True
 
     def stop(self):
@@ -89,49 +108,130 @@ class RoomServer:
                 pass
 
     def _receive_loop(self):
+        log("UDP receive loop started")
+
         while self.running:
             try:
                 data, addr = self.socket.recvfrom(MAX_UDP)
+
+                log(
+                    f"[UDP RX] bytes={len(data)} "
+                    f"from={addr} "
+                    f"magic={data[:4]!r}"
+                )
+
                 if data.startswith(RELAY_MAGIC):
                     self._handle_relay(data, addr)
+
                 elif data.startswith(CONTROL_MAGIC):
                     message = unpack_control(data)
-                    if message:
+
+                    if message is not None:
+                        log(
+                            f"[CONTROL RX] from={addr} "
+                            f"action={message.get('action')!r} "
+                            f"message={message}"
+                        )
                         self._handle_control(message, addr)
-            except OSError:
+                    else:
+                        log(f"[CONTROL RX] invalid packet from={addr}")
+
+                else:
+                    log(f"[UDP RX] unknown magic from={addr}: {data[:16]!r}")
+
+            except OSError as e:
                 if self.running:
+                    log(f"[UDP RX] socket error: {e}")
                     time.sleep(0.05)
+
             except Exception as e:
-                print(f"UDP receive error: {e}")
+                log(f"[UDP RX] EXCEPTION: {e}")
+                traceback.print_exc()
 
     def _handle_control(self, message, addr):
         action = message.get("action")
-        if action == "create_room":
-            self._create_room(message, addr)
-        elif action == "join_room":
-            self._join_room(message, addr)
-        elif action == "leave_room":
-            self._leave_room(message, addr)
-        elif action == "keepalive":
-            self._keepalive(message, addr)
+
+        log(f"[CONTROL] dispatch action={action!r} addr={addr}")
+
+        try:
+            if action == "create_room":
+                self._create_room(message, addr)
+
+            elif action == "join_room":
+                self._join_room(message, addr)
+
+            elif action == "leave_room":
+                self._leave_room(message, addr)
+
+            elif action == "keepalive":
+                self._keepalive(message, addr)
+
+            else:
+                log(f"[CONTROL] unknown action={action!r} from={addr}")
+                self._send(
+                    {
+                        "action": "error",
+                        "message": f"Unknown action: {action}",
+                    },
+                    addr,
+                )
+
+        except Exception as e:
+            log(
+                f"[CONTROL] EXCEPTION action={action!r} "
+                f"from={addr}: {e}"
+            )
+            traceback.print_exc()
+
+            try:
+                self._send(
+                    {
+                        "action": "error",
+                        "message": "Server error while processing request",
+                    },
+                    addr,
+                )
+            except Exception:
+                pass
 
     def _create_room(self, message, addr):
         room_id = str(message.get("room_id", "")).strip()
         peer_id = str(message.get("peer_id", "")).strip()
         username = str(message.get("username", peer_id)).strip()
+
         if not room_id or len(peer_id) != PEER_ID_LEN:
+            log(
+                f"[ROOM CREATE] invalid request "
+                f"room_id={room_id!r} peer_id={peer_id!r}"
+            )
+            self._send(
+                {
+                    "action": "error",
+                    "message": "Invalid room_id or peer_id",
+                },
+                addr,
+            )
             return
 
         with self.lock:
-            if room_id in self.rooms and self.rooms[room_id]["members"]:
-                # Treat Create on an existing room as re-registration of this peer.
-                room = self.rooms[room_id]
+            existing = self.rooms.get(room_id)
+
+            if existing and existing["members"]:
+                room = existing
+                log(
+                    f"[ROOM CREATE] room {room_id!r} already exists; "
+                    f"treating request as peer re-registration"
+                )
             else:
                 room = {
                     "subnet": self.overlay_subnet(room_id),
-                    "members": {}
+                    "members": {},
                 }
                 self.rooms[room_id] = room
+                log(
+                    f"[ROOM CREATE] created room={room_id!r} "
+                    f"subnet={room['subnet']}"
+                )
 
             if peer_id not in room["members"]:
                 overlay_ip = self._allocate_overlay_ip(room, peer_id)
@@ -143,196 +243,379 @@ class RoomServer:
                 "username": username,
                 "addr": addr,
                 "overlay_ip": overlay_ip,
-                "last_seen": time.time()
+                "last_seen": time.time(),
             }
+
+            log(
+                f"[ROOM CREATE] registered peer={peer_id} "
+                f"user={username!r} addr={addr} overlay={overlay_ip}"
+            )
 
             self._send_room_state(room, peer_id, "room_created")
 
-            print(f"Room {room_id}: {username} ({peer_id}) @ {addr} -> {overlay_ip}")
+            log(
+                f"[ROOM CREATE] response sent for room={room_id!r} "
+                f"peer={peer_id}"
+            )
 
     def _join_room(self, message, addr):
         room_id = str(message.get("room_id", "")).strip()
         peer_id = str(message.get("peer_id", "")).strip()
         username = str(message.get("username", peer_id)).strip()
+
         if not room_id or len(peer_id) != PEER_ID_LEN:
+            log(
+                f"[ROOM JOIN] invalid request "
+                f"room_id={room_id!r} peer_id={peer_id!r}"
+            )
+            self._send(
+                {
+                    "action": "error",
+                    "message": "Invalid room_id or peer_id",
+                },
+                addr,
+            )
             return
 
         with self.lock:
             room = self.rooms.get(room_id)
+
             if not room:
-                self._send({"action": "error", "message": "Room does not exist"}, addr)
+                log(
+                    f"[ROOM JOIN] room={room_id!r} does not exist "
+                    f"requested by {addr}"
+                )
+                self._send(
+                    {
+                        "action": "error",
+                        "message": "Room does not exist",
+                    },
+                    addr,
+                )
                 return
 
             old = room["members"].get(peer_id)
-            overlay_ip = old["overlay_ip"] if old else self._allocate_overlay_ip(room, peer_id)
+
+            if old:
+                overlay_ip = old["overlay_ip"]
+            else:
+                overlay_ip = self._allocate_overlay_ip(room, peer_id)
 
             room["members"][peer_id] = {
                 "peer_id": peer_id,
                 "username": username,
                 "addr": addr,
                 "overlay_ip": overlay_ip,
-                "last_seen": time.time()
+                "last_seen": time.time(),
             }
+
+            log(
+                f"[ROOM JOIN] registered peer={peer_id} "
+                f"user={username!r} addr={addr} overlay={overlay_ip}"
+            )
 
             self._send_room_state(room, peer_id, "room_joined")
 
             for pid, member in room["members"].items():
                 if pid == peer_id:
                     continue
-                self._send({
-                    "action": "peer_joined",
-                    "room_id": room_id,
-                    "peer_id": peer_id,
-                    "username": username,
-                    "public_ip": addr[0],
-                    "public_port": addr[1],
-                    "overlay_ip": overlay_ip
-                }, member["addr"])
 
-            print(f"{username} joined {room_id} from {addr} -> {overlay_ip}")
+                self._send(
+                    {
+                        "action": "peer_joined",
+                        "room_id": room_id,
+                        "peer_id": peer_id,
+                        "username": username,
+                        "public_ip": addr[0],
+                        "public_port": addr[1],
+                        "overlay_ip": overlay_ip,
+                    },
+                    member["addr"],
+                )
+
+            log(
+                f"[ROOM JOIN] response sent to peer={peer_id}; "
+                f"members={len(room['members'])}"
+            )
 
     def _send_room_state(self, room, peer_id, action):
         members = {}
+
         for pid, member in room["members"].items():
             if pid == peer_id:
                 continue
+
             members[pid] = {
                 "username": member["username"],
                 "public_ip": member["addr"][0],
                 "public_port": member["addr"][1],
-                "overlay_ip": member["overlay_ip"]
+                "overlay_ip": member["overlay_ip"],
             }
 
         own = room["members"][peer_id]
-        self._send({
-            "action": action,
-            "room_id": next(
-                (rid for rid, r in self.rooms.items() if r is room), ""
+
+        room_id = next(
+            (
+                rid
+                for rid, candidate in self.rooms.items()
+                if candidate is room
             ),
+            "",
+        )
+
+        response = {
+            "action": action,
+            "room_id": room_id,
             "members": members,
             "self": {
                 "peer_id": peer_id,
-                "overlay_ip": own["overlay_ip"]
+                "overlay_ip": own["overlay_ip"],
             },
-            "prefix": 24
-        }, own["addr"])
+            "prefix": 24,
+        }
+
+        log(
+            f"[ROOM STATE] action={action!r} "
+            f"room={room_id!r} peer={peer_id} "
+            f"members={list(members.keys())} "
+            f"self={response['self']}"
+        )
+
+        self._send(response, own["addr"])
 
     def _leave_room(self, message, addr):
-        room_id = message.get("room_id")
-        peer_id = message.get("peer_id")
+        room_id = str(message.get("room_id", "")).strip()
+        peer_id = str(message.get("peer_id", "")).strip()
+
         with self.lock:
             room = self.rooms.get(room_id)
+
             if not room or peer_id not in room["members"]:
+                log(
+                    f"[ROOM LEAVE] unknown room/peer "
+                    f"room={room_id!r} peer={peer_id!r}"
+                )
                 return
+
             del room["members"][peer_id]
+
+            log(
+                f"[ROOM LEAVE] peer={peer_id} left room={room_id!r}"
+            )
+
             for member in room["members"].values():
-                self._send({
-                    "action": "peer_left",
-                    "room_id": room_id,
-                    "peer_id": peer_id
-                }, member["addr"])
+                self._send(
+                    {
+                        "action": "peer_left",
+                        "room_id": room_id,
+                        "peer_id": peer_id,
+                    },
+                    member["addr"],
+                )
+
             if not room["members"]:
                 del self.rooms[room_id]
+                log(f"[ROOM LEAVE] deleted empty room={room_id!r}")
 
     def _keepalive(self, message, addr):
-        room_id = message.get("room_id")
-        peer_id = message.get("peer_id")
+        room_id = str(message.get("room_id", "")).strip()
+        peer_id = str(message.get("peer_id", "")).strip()
+
         with self.lock:
             room = self.rooms.get(room_id)
+
             if not room or peer_id not in room["members"]:
+                log(
+                    f"[KEEPALIVE] ignored unknown room/peer "
+                    f"room={room_id!r} peer={peer_id!r} addr={addr}"
+                )
                 return
+
             member = room["members"][peer_id]
-            # Always update to the actual observed source address.
             changed = member["addr"] != addr
+
             member["addr"] = addr
             member["last_seen"] = time.time()
 
+            # Reply so the client can verify that the server is alive.
+            self._send(
+                {
+                    "action": "keepalive_ack",
+                    "room_id": room_id,
+                    "peer_id": peer_id,
+                },
+                addr,
+            )
+
+            log(
+                f"[KEEPALIVE] peer={peer_id} room={room_id!r} "
+                f"addr={addr} changed={changed}"
+            )
+
             if changed:
                 for pid, other in room["members"].items():
-                    if pid != peer_id:
-                        self._send({
+                    if pid == peer_id:
+                        continue
+
+                    self._send(
+                        {
                             "action": "peer_joined",
                             "room_id": room_id,
                             "peer_id": peer_id,
                             "username": member["username"],
                             "public_ip": addr[0],
                             "public_port": addr[1],
-                            "overlay_ip": member["overlay_ip"]
-                        }, other["addr"])
+                            "overlay_ip": member["overlay_ip"],
+                        },
+                        other["addr"],
+                    )
 
     def _find_member_by_addr(self, addr):
         for room_id, room in self.rooms.items():
             for peer_id, member in room["members"].items():
                 if member["addr"] == addr:
                     return room_id, peer_id, member
+
         return None, None, None
 
     def _handle_relay(self, data, addr):
         if len(data) < 4 + PEER_ID_LEN * 2:
+            log(f"[RELAY] packet too short from={addr}")
             return
 
-        target = data[4:4 + PEER_ID_LEN].decode("ascii", errors="ignore").rstrip("_")
-        source = data[4 + PEER_ID_LEN:4 + PEER_ID_LEN * 2].decode("ascii", errors="ignore").rstrip("_")
+        target = (
+            data[
+                4 : 4 + PEER_ID_LEN
+            ].decode("ascii", errors="ignore").rstrip("_")
+        )
+
+        source = (
+            data[
+                4 + PEER_ID_LEN : 4 + PEER_ID_LEN * 2
+            ].decode("ascii", errors="ignore").rstrip("_")
+        )
+
         payload = data[4 + PEER_ID_LEN * 2:]
+
         if len(payload) > OVERLAY_MTU:
+            log(
+                f"[RELAY] payload too large from={addr}: "
+                f"{len(payload)}"
+            )
             return
 
         with self.lock:
             room_id, source_id, source_member = self._find_member_by_addr(addr)
+
             if not room_id or source_id != source:
+                log(
+                    f"[RELAY] rejected source={source} addr={addr} "
+                    f"resolved_room={room_id} resolved_peer={source_id}"
+                )
                 return
+
             room = self.rooms[room_id]
             target_member = room["members"].get(target)
+
             if not target_member:
+                log(
+                    f"[RELAY] target peer={target} not found "
+                    f"room={room_id!r}"
+                )
                 return
 
-            # The target receives LVR1 + target + source + payload.
-            self._send_raw(
-                data,
-                target_member["addr"]
+            log(
+                f"[RELAY] room={room_id!r} "
+                f"source={source} -> target={target} "
+                f"payload={len(payload)} bytes"
             )
 
+            self._send_raw(data, target_member["addr"])
+
     def _send(self, message, addr):
-        self._send_raw(pack_control(message), addr)
+        data = pack_control(message)
+
+        log(
+            f"[UDP TX] CONTROL bytes={len(data)} "
+            f"to={addr} action={message.get('action')!r}"
+        )
+
+        self._send_raw(data, addr)
 
     def _send_raw(self, data, addr):
         try:
-            self.socket.sendto(data, addr)
-        except OSError:
-            pass
+            sent = self.socket.sendto(data, addr)
+            log(f"[UDP TX] sendto returned={sent} to={addr}")
+            return sent
+
+        except OSError as e:
+            log(
+                f"[UDP TX ERROR] bytes={len(data)} "
+                f"to={addr}: {e}"
+            )
+            return 0
+
+        except Exception as e:
+            log(
+                f"[UDP TX EXCEPTION] bytes={len(data)} "
+                f"to={addr}: {e}"
+            )
+            traceback.print_exc()
+            return 0
 
     def _cleanup_loop(self):
         while self.running:
             time.sleep(15)
             now = time.time()
+
             with self.lock:
                 for room_id in list(self.rooms):
                     room = self.rooms[room_id]
+
                     stale = [
-                        pid for pid, m in room["members"].items()
-                        if now - m["last_seen"] > PEER_TIMEOUT
+                        pid
+                        for pid, member in room["members"].items()
+                        if now - member["last_seen"] > PEER_TIMEOUT
                     ]
+
                     for pid in stale:
                         del room["members"][pid]
+
+                        log(
+                            f"[CLEANUP] removing stale peer={pid} "
+                            f"from room={room_id!r}"
+                        )
+
                         for other in room["members"].values():
-                            self._send({
-                                "action": "peer_left",
-                                "room_id": room_id,
-                                "peer_id": pid
-                            }, other["addr"])
+                            self._send(
+                                {
+                                    "action": "peer_left",
+                                    "room_id": room_id,
+                                    "peer_id": pid,
+                                },
+                                other["addr"],
+                            )
+
                     if not room["members"]:
                         del self.rooms[room_id]
+                        log(
+                            f"[CLEANUP] deleted empty room={room_id!r}"
+                        )
 
 
 def run():
     udp = RoomServer()
     udp.start()
 
-    # Health HTTP is deliberately separate from the UDP listener.
-    # Hosting platforms must expose UDP_PORT directly; an HTTP-only service
-    # cannot transparently expose this UDP socket.
-    print(f"HTTP health endpoint on {HTTP_HOST}:{HTTP_PORT}")
-    app.run(host=HTTP_HOST, port=HTTP_PORT, threaded=True)
+    log(
+        f"HTTP health endpoint on {HTTP_HOST}:{HTTP_PORT}"
+    )
+
+    app.run(
+        host=HTTP_HOST,
+        port=HTTP_PORT,
+        threaded=True,
+    )
 
 
 if __name__ == "__main__":
